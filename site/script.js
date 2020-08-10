@@ -50,8 +50,8 @@ class Calculator {
         computation = prev / current
         break}
         else{
-          alert("Cannot divide by 0");
-          this.clear();
+          alert("Cannot divide by 0")
+          this.clear()
         }
       default:
         return
