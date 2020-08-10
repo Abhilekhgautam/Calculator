@@ -34,7 +34,7 @@ class Calculator {
     let computation
     const prev = parseFloat(this.previousOperand)
     const current = parseFloat(this.currentOperand)
-    if (isNaN(prev) || isNaN(current)) return
+    if (isNaN(prev) || isNaN(current)) return;
     switch (this.operation) {
       case '+':
         computation = prev + current
@@ -46,15 +46,22 @@ class Calculator {
         computation = prev * current
         break
       case '÷':
+      if(current!=0){
         computation = prev / current
-        break
+        break}
+        else{
+          alert("Cannot divide by 0");
+          this.clear();
+        }
       default:
         return
     }
+  
     this.currentOperand = computation
     this.operation = undefined
     this.previousOperand = ''
   }
+
 
   getDisplayNumber(number) {
     const stringNumber = number.toString()
